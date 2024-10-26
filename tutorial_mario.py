@@ -30,6 +30,9 @@ enemies = [
 
 clock = pygame.time.Clock()
 
+# 試しにpngを入れてみる
+background = pygame.image.load("AnimatedStreet.png")
+
 while True:
     for e in pygame.event.get():
         # 条件式がtrueの時、exit関数でウィンドウが閉じられ、そうでない時は0を返す
@@ -65,8 +68,10 @@ while True:
 
         WINDOWS.fill((135, 206, 235))
         # 表示ウィンドウ、色、視覚の位置を定義して、オブジェクトのrectを呼び出している
-        pygame.draw.rect(WINDOWS, (255, 0, 0),(mx, my, 20,20))
-        [pygame.draw.rect(WINDOWS,(0, 255, 0), enemy['rect']) for enemy in enemies]
+        # pygame.draw.rect(WINDOWS, (255, 0, 0),(mx, my, 20,20))
+        # [pygame.draw.rect(WINDOWS,(0, 255, 0), enemy['rect']) for enemy in enemies]
+        WINDOWS.blit(pygame.image.load("Player.png"), (mx, my, 20,20))
+        [WINDOWS.blit(pygame.image.load("Enemy.png"), enemy['rect']) for enemy in enemies]
 
         # サーフェス全体を更新して画面に描写する
         pygame.display.flip()
