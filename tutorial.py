@@ -159,5 +159,6 @@ while True:
     # P1.draw(DISPLAYSURF)
     # E1.draw(DISPLAYSURF)
 
+
     pygame.display.update()
     FramePerSec.tick(FPS)
